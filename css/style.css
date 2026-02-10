@@ -590,6 +590,64 @@ footer .copyright p {
     overflow-x: hidden;
   }
 
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #ffffff !important;
+    /* Bajamos un poco el padding superior para el logo */
+    padding: 30px 25px !important;
+    transition: left 0.4s ease;
+    display: flex !important;
+    flex-direction: column;
+    z-index: 9999;
+    box-shadow: 15px 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+  }
+
+  /* Contenedor del logo en el menú */
+  .menu-logo-mobile {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .navbar-nav {
+    background: transparent !important;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    background: transparent !important;
+    margin-bottom: 10px !important;
+  }
+
+  .navbar-nav .nav-link {
+    color: #1a1a1a !important;
+    font-size: 1.4rem !important; /* Un poco más grande para impactar */
+    font-weight: 800 !important;
+    padding: 12px 0 !important;
+    text-transform: none !important;
+  }
+
+  /* Overlay oscuro */
+  .navbar-toggler[aria-expanded="true"]::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+  }
   /* --- 1. HEADER COMPACTO (Para subir el botón RESERVA YA) --- */
   header {
     height: 100vh !important;

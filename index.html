@@ -40,6 +40,13 @@
         </button>
 
         <div class="collapse navbar-collapse" id="show-menu">
+          <div class="menu-logo-mobile d-lg-none">
+            <img
+              src="imgs/logo-menu.png"
+              alt="Go Tours Logo"
+              style="width: 150px; margin-bottom: 30px"
+            />
+          </div>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#home"
@@ -373,6 +380,14 @@
 
           e.preventDefault();
           $("html").animate({ scrollTop: $(getAttr).offset().top }, 1000);
+        });
+
+        // Cerrar el menú lateral al hacer clic en cualquier enlace
+        $(".navbar-nav .nav-link").on("click", function () {
+          $(".navbar-collapse").removeClass("show");
+          $(".navbar-toggler")
+            .addClass("collapsed")
+            .attr("aria-expanded", "false");
         });
       });
     </script>
