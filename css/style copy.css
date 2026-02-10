@@ -588,90 +588,116 @@ footer .copyright p {
 @media (max-width: 992px) {
   body {
     overflow-x: hidden;
-  }
-
-  /* --- 1. HEADER COMPACTO (Para subir el botón RESERVA YA) --- */
-  header {
-    height: 100vh !important;
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center !important; /* Centra todo el bloque en la pantalla */
-    padding: 0 !important;
-  }
-
-  header .container > div {
-    padding-top: 20px !important; /* Espacio mínimo superior */
-    margin: 0 auto !important;
-    text-align: center;
-  }
-
-  /* --- RECUPERAMOS EL ESTILO Y TAMAÑO DE LETRA --- */
-  header h1 {
-    font-size: 42px !important; /* Volvemos a un tamaño grande e impactante */
-    font-weight: bold;
-    line-height: 1.1 !important;
-    margin-bottom: 5px !important;
-    color: white;
-  }
-
-  /* El texto "Increíble" en morado */
-  header h1 span,
-  header .container > div h1:first-child {
-    font-size: 32px !important;
-    display: block;
-    margin-bottom: -5px !important; /* Lo pegamos al título principal */
-  }
-
-  /* Párrafo: Legible pero sin ocupar media pantalla */
-  header .container > div p {
-    font-size: 1rem !important; /* Tamaño estándar de lectura */
-    line-height: 1.4 !important;
-    margin: 15px auto !important;
-    max-width: 90%;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Mejora la lectura sobre el fondo */
-  }
-
-  /* --- BOTÓN DE RESERVA YA --- */
-  header button {
-    margin: 10px auto !important;
-    background: transparent;
-    border: none;
-  }
-
-  header button a {
-    display: inline-block;
-    padding: 12px 35px !important;
-    font-size: 1.1rem !important;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: 2px solid white;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-  }
-
-  /* --- 2. ABOUT US (Corrección de textos desplazados) --- */
+  } /* Evita que la web baile hacia los lados */
+  /* 1. Quitamos el float y el ancho fijo que lo empuja a un lado */
   .about-us .small-container .text-right p,
   .about-us .small-container .text-right {
     float: none !important;
     width: 100% !important;
     margin: 0 auto !important;
-    text-align: center !important;
-    padding: 0 15px;
+    text-align: center !important; /* Centramos el texto para que se vea mejor */
+    padding: 0 15px; /* Evita que el texto toque los bordes del móvil */
   }
 
+  /* 2. Ajustamos el título "REGÁLATE TIEMPO" */
+  .about-us .small-container > p + div h4,
   .about-us h4 {
     text-align: center !important;
-    margin-top: 25px !important;
+    margin-top: 30px !important;
     width: 100% !important;
   }
 
+  /* 3. Aseguramos que el botón de reserva también se centre */
   .about-us .small-container > p + div button {
-    margin: 15px auto !important;
+    margin: 20px auto !important;
     display: block !important;
   }
 
+  header {
+    height: auto !important;
+    min-height: 100vh; /* Se ajusta a la pantalla, pero sin sobrar */
+    padding-bottom: 20px;
+  }
+
+  /* Header: Bajamos el contenido para que no lo tape el menú */
+  header .container > div {
+    padding-top: 110px !important;
+    text-align: center;
+  }
+
+  header button {
+    margin: 20px auto !important;
+  }
+
+  header h1 {
+    font-size: 45px !important;
+  }
+  /* 1. Contenedor principal de la redonda y el título */
+  .agency .container > div > div {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    /* Le damos una altura mínima para que el círculo no se aplaste */
+    min-height: 300px;
+    margin: 20px 0;
+  }
+
+  /* 2. La imagen "pic1.png" (tu redonda blanca) */
+  .agency .container > div > div img {
+    display: block !important;
+    width: 320px !important; /* Ajusta este tamaño según tu imagen original */
+    height: auto !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1; /* Se queda al fondo */
+  }
+
+  /* 3. El Título (Siente el Paraíso) */
+  .agency .container > div h2 {
+    display: block !important;
+    position: relative !important;
+    z-index: 2; /* Se coloca por ENCIMA de la redonda */
+    color: white !important; /* O el color que resalte sobre el blanco de pic1.png */
+    font-size: 26px !important;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 !important;
+    /* Reseteamos los valores que tenías en desktop */
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+  /* 4. Ocultamos los aviones laterales en móvil para que no estorben */
+  .agency img[src*="airplane.png"] {
+    display: none !important;
+  }
+  /* 4. Separamos el párrafo para que no se pegue a la redonda */
+  .agency .container > p {
+    margin-top: 30px;
+    padding: 0 10px;
+    line-height: 1.6;
+  }
+  /* Navbar */
+  .navbar ul {
+    background-color: rgba(189, 140, 191, 0.95);
+  }
+  .navbar ul li {
+    margin: 10px 0;
+  }
+  nav.navbar form {
+    width: 100%;
+    position: static;
+  }
+
+  /* About Us */
+  .about-us .small-container > p + div {
+    padding: 50px 0;
+  }
   .about-us .row > .col-lg-6:first-of-type {
     height: auto;
     left: 0;
@@ -679,81 +705,47 @@ footer .copyright p {
     flex-direction: column;
     align-items: center;
   }
-
   .about-us .item {
     position: static !important;
     width: 100% !important;
     max-width: 280px;
     margin: 10px auto;
   }
-
   .about-us .first,
   .about-us .second {
     display: none;
   }
 
-  /* --- 3. AGENCIA (Redonda y Título Centrado) --- */
-  .agency img[src*="airplane.png"],
+  /* Agencia: Siente el Paraíso */
   .agency img:first-of-type,
   .agency img:last-of-type {
-    display: none !important;
+    display: none;
   }
-
   .agency .container > div {
     width: 100% !important;
   }
-
   .agency .container > div > div {
-    display: flex !important; /* Flex para centrado perfecto */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
     position: relative;
-    width: 100%;
-    min-height: 280px; /* Altura controlada para el círculo */
-    margin: 15px 0;
   }
-
   .agency .container > div > div img {
-    display: block !important;
-    width: 280px !important; /* Tamaño de la redonda ajustado */
-    height: auto !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 1;
-    margin: 0 !important;
+    width: 100% !important;
+    margin: 0;
   }
 
   .agency .container > div h2 {
     display: block !important;
-    position: relative !important;
-    z-index: 2; /* Encima de la redonda */
-    color: white !important;
-    font-size: 24px !important;
-    line-height: 1.2;
-    text-align: center;
-    margin: 0 !important;
-    left: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 28px !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin: 0;
   }
 
-  .agency .container > p {
-    margin-top: 20px;
-    padding: 0 15px;
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  /* --- 4. NAVBAR Y OTROS --- */
-  .navbar ul {
-    background-color: rgba(189, 140, 191, 0.95);
-  }
-
+  /* Otros */
   .services .slide {
     width: 85%;
   }
