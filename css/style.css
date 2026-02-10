@@ -614,9 +614,14 @@ footer .copyright p {
   }
   /* Header: Bajamos el contenido para que no lo tape el menú */
   header .container > div {
-    padding-top: 140px !important;
+    padding-top: 110px !important;
     text-align: center;
   }
+
+  header button {
+    margin: 20px auto !important;
+  }
+
   header h1 {
     font-size: 45px !important;
   }
@@ -766,7 +771,7 @@ footer .copyright p {
 
 @media (max-width: 480px) {
   header .container > div {
-    padding-top: 110px !important;
+    padding-top: 90px !important;
   }
   .agency .container > div h2 {
     font-size: 22px !important;
